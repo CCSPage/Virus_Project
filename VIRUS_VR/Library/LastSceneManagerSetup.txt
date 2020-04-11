@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Chloe.unity
+- path: Assets/Scenes/Chang.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
