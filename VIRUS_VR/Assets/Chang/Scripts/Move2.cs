@@ -21,16 +21,17 @@ public class Move2 : MonoBehaviour
     }
     void Update()
     {
-       /* if (timer < 0)
-        {
-            ran = Random.Range(0, checkpoints.Length);
-            Debug.Log("d");
-            timer = 2f;
-        }
-        else if (timer <= 1)
-        {
-            timer -= Time.deltaTime;
-        }*/
+        checkpoints = Physics.OverlapSphere(this.transform.position, 12f, layerMask);
+        /* if (timer < 0)
+         {
+             ran = Random.Range(0, checkpoints.Length);
+             Debug.Log("d");
+             timer = 2f;
+         }
+         else if (timer <= 1)
+         {
+             timer -= Time.deltaTime;
+         }*/
         if (checkpoints.Length >0) { this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, checkpoints[ran].transform.position, speed * Time.deltaTime); }
          if (gameObject.transform.position == checkpoints[ran].transform.position) {
            ran = Random.Range(0, checkpoints.Length);
@@ -40,7 +41,7 @@ public class Move2 : MonoBehaviour
     private void FixedUpdate()
     {
        
-        checkpoints = Physics.OverlapSphere(this.transform.position, 15f, layerMask);
+        
        /* foreach (var checkpoint in checkpoints) {
             if (this.gameObject.transform.position == checkpoint.transform.position) {
                 ran = Random.Range(0, checkpoints.Length);
@@ -51,7 +52,7 @@ public class Move2 : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(this.transform.position, 15f);
+        Gizmos.DrawWireSphere(this.transform.position, 12f);
     }
 
     IEnumerator NumberGen()
