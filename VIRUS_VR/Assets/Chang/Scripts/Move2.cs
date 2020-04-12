@@ -7,6 +7,7 @@ public class Move2 : MonoBehaviour
     public int ran;
     public float radius =12f;
     public float speed = 1.5f;
+    public float waitSec = 4;
     public Collider[] checkpoints;
    // int layerID = 8;
     int layerMask = 1 << 8;
@@ -66,7 +67,7 @@ public class Move2 : MonoBehaviour
         while (true)
         {
             ran = Random.Range(0, checkpoints.Length);
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(waitSec);
         }
     }
 }
