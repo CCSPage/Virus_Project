@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move2 : MonoBehaviour
 {
     public int ran;
+    public float radius =12f;
     public float speed = 1.5f;
     public Collider[] checkpoints;
    // int layerID = 8;
@@ -14,14 +15,14 @@ public class Move2 : MonoBehaviour
     
     void Start()
     {
-        checkpoints = Physics.OverlapSphere(this.transform.position, 15f, layerMask);
+        checkpoints = Physics.OverlapSphere(this.transform.position, radius, layerMask);
         ran = Random.Range(0, checkpoints.Length);
         Debug.Log(ran);
         StartCoroutine(NumberGen());
     }
     void Update()
     {
-        checkpoints = Physics.OverlapSphere(this.transform.position, 12f, layerMask);
+        checkpoints = Physics.OverlapSphere(this.transform.position, radius, layerMask);
         /* if (timer < 0)
          {
              ran = Random.Range(0, checkpoints.Length);
@@ -32,10 +33,15 @@ public class Move2 : MonoBehaviour
          {
              timer -= Time.deltaTime;
          }*/
-        if (checkpoints.Length >0) { this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, checkpoints[ran].transform.position, speed * Time.deltaTime); }
-         if (gameObject.transform.position == checkpoints[ran].transform.position) {
+        if (ran > checkpoints.Length) {
+            ran = Random.Range(0, checkpoints.Length);
+        }
+        if (checkpoints.Length >0) 
+        { this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, checkpoints[ran].transform.position, speed * Time.deltaTime); }
+         
+        if (gameObject.transform.position == checkpoints[ran].transform.position) {
            ran = Random.Range(0, checkpoints.Length);
-            Debug.Log(ran);
+            //Debug.Log(ran);
           }
     }
     private void FixedUpdate()
@@ -52,7 +58,7 @@ public class Move2 : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(this.transform.position, 12f);
+        Gizmos.DrawWireSphere(this.transform.position, radius);
     }
 
     IEnumerator NumberGen()
