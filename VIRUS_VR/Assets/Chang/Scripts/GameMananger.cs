@@ -8,24 +8,37 @@ public class GameMananger : MonoBehaviour
     static public int virusTotal = 0;
     static public int virusRemain = 0;
     public GameObject textObj;
-    public Text virusCount;
+    private Text virusCount;
     public GameObject timerObj;
     private Text timerText;
-    private float timer = 40.00f;
+    private float timer = 50.00f;
+
     void Start()
     {
         virusCount = textObj.GetComponent <Text>();
         timerText = timerObj.GetComponent<Text>();
     }
+
     void Update()
     {
-        timer -= Time.deltaTime;
-        timerText.text = "" + Mathf.Round(timer);
-        virusCount.text = virusRemain + " / " + virusTotal;
+        Timer();
         
         if (Input.GetKey("escape"))
         {
             Application.Quit();
         }
+    }
+
+    void Timer() {
+        if (timer < 0)
+        {
+            timer = 0;
+        }
+        if (timer != 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        timerText.text = "" + timer.ToString("N2");
+        virusCount.text = virusRemain + " / " + virusTotal;
     }
 }
