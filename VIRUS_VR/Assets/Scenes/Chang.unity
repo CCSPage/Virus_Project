@@ -4492,7 +4492,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1525912025
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4792,7 +4792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armPos: {fileID: 3703127431741063297}
-  rotate: 1
+  rotate: 0
 --- !u!64 &1680427657
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5583,7 +5583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armPos: {fileID: 3703127431741063297}
-  rotate: 1
+  rotate: 0
 --- !u!64 &1855698394
 MeshCollider:
   m_ObjectHideFlags: 0

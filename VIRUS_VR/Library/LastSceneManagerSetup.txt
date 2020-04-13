@@ -1,13 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Chloe.unity
-=======
-<<<<<<< HEAD
-- path: Assets/Scenes/Chloe.unity
-=======
-- path: Assets/Scenes/My's.unity
->>>>>>> 535856a80810c56894b92e42a60859bd3aab1823
->>>>>>> 6c682fbb4224a9b43018cb8a3741b164029c9a05
+- path: Assets/My's/Scenes/StartMenu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
