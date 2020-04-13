@@ -5,7 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     private float num = 3f;
-    //private float speed = 1f;
+    private float speed = 1f;
     public GameObject [] checkPoint;
     public int randomNum;
 

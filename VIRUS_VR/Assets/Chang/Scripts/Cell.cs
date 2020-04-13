@@ -8,7 +8,6 @@ public class Cell : MonoBehaviour
     private bool enter = false;
     public Transform armPos;
     
-
     void Start()
     {
         transform.rotation = Quaternion.Euler(Random.Range(0f, 360), Random.Range(0f, 360), Random.Range(0f, 360));
@@ -38,11 +37,7 @@ public class Cell : MonoBehaviour
             enter = true;
             gameObject.transform.parent = null;
             Destroy(this.gameObject, 1f);
-            if (transform.childCount > 0)
-            {
-                GameMananger.virusTotal -= 1;
-                GameMananger.virusRemain -= 1;
-            }
+
         }
     }
 }

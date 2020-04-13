@@ -31,8 +31,8 @@ public class Grab : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetMouseButton(0) && GameMananger.gameOver == false)
+        
+        if (Input.GetMouseButton(0))
         {
             ani.SetBool("shoot", true);
             Hand.grabBool = false;
